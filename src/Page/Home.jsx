@@ -9,7 +9,7 @@ const Home = () => {
     });
   }, []);
   return (
-    <div>
+    <div>Data
       {trending.map(trend => (
         <div>{trend.name}</div>
       ))}
