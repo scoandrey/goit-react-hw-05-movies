@@ -4,14 +4,17 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
   const [trending, setTrending] = useState([]);
   useEffect(() => {
-    getTrending().then(resp=>resp.json()).then((trending) => {
-      setTrending(trending);
-    });
+    getTrending()
+      .then(resp => resp.json())
+      .then(trending => {
+        setTrending(trending.results);
+      });
   }, []);
   return (
-    <div>Data
+    <div>
+      Data
       {trending.map(trend => (
-        <div>{trend.name}</div>
+        <div key={trend.id}>{trend.title}</div>
       ))}
     </div>
   );
