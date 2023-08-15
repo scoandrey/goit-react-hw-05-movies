@@ -4,11 +4,9 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
   const [trending, setTrending] = useState([]);
   useEffect(() => {
-    getTrending()
-      .then(resp => resp.json())
-      .then(trending => {
-        setTrending(trending.results);
-      });
+    getTrending().then(trending => {
+      setTrending(trending.results);
+    });
   }, []);
   return (
     <div>
