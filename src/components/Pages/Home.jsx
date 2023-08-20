@@ -1,5 +1,8 @@
 import { getTrending } from 'api/themoviedb';
+import Header from 'components/Header/Header';
 import React, { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import Trending from '../Trending';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -9,12 +12,11 @@ const Home = () => {
     });
   }, []);
   return (
-    <div>
-      Data
-      {trending.map(trend => (
-        <div key={trend.id}>{trend.title}</div>
-      ))}
-    </div>
+    <>
+      <Header />
+      <Trending trending={trending} />
+      <Outlet />
+    </>
   );
 };
 
