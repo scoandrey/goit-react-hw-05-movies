@@ -11,7 +11,7 @@ const Trending = ({ trending }) => {
             className={'nav-link'}
             aria-current="page"
           >
-            {trend.title ? trend.title : trend.original_name}
+            {trend.title ? trend.title : trend.name}
           </NavLink>
         </li>
       ))}
