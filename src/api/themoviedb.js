@@ -14,3 +14,15 @@ export const getMovieDetails = async id => {
   const details = await axios(url);
   return details.data;
 };
+
+export const getMovieCredits = async id => {
+  const url = `/movie/${id}/credits?api_key=${apiKey}`;
+  const credits = await axios(url);
+  return credits.data;
+};
+
+export const getMovieReviews = async id => {
+  const url = `/movie/${id}/reviews?api_key=${apiKey}`;
+  const reviews = await axios(url);
+  return reviews.data;
+};
