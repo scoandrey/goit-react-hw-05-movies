@@ -1,5 +1,5 @@
 import { getMovieDetails } from 'api/themoviedb';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const MovieDetails = () => {
     getMovieDetails(movieId).then(data => setDetails(data));
   }, [movieId]);
   return (
-    <>
+    <Suspense>
       {JSON.stringify(details)}
       <ul>
         <li>
@@ -32,7 +32,7 @@ const MovieDetails = () => {
           </NavLink>
         </li>
       </ul>
-    </>
+    </Suspense>
   );
 };
 

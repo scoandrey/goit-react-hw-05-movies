@@ -1,6 +1,6 @@
 import { getMovieCredits } from 'api/themoviedb';
 import Credits from 'components/Credits';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Cast = () => {
@@ -10,9 +10,9 @@ const Cast = () => {
     getMovieCredits(movieId).then(credits => setCredits(credits.cast));
   }, [movieId]);
   return (
-    <>
+    <Suspense>
       <Credits credits={credits} />
-    </>
+    </Suspense>
   );
 };
 

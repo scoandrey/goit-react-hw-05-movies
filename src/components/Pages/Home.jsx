@@ -1,5 +1,5 @@
 import { getTrending } from 'api/themoviedb';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Trending from '../Trending';
 
 const Home = () => {
@@ -10,9 +10,9 @@ const Home = () => {
     });
   }, []);
   return (
-    <>
+    <Suspense>
       <Trending trending={trending} />
-    </>
+    </Suspense>
   );
 };
 
