@@ -26,3 +26,10 @@ export const getMovieReviews = async id => {
   const reviews = await axios(url);
   return reviews.data;
 };
+
+
+export const getMoviesByName = async name => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${name}&api_key=${apiKey}`
+  const movies = await axios(url);
+  return movies.data.results;
+};
