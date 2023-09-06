@@ -5,7 +5,10 @@ export const MovieList = ({ details }) => {
   const { id, poster_path, title, overview, genres } = details;
   return (
     <div key={id}>
-      <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="photo" />
+      <img
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+        alt={`${poster_path}`}
+      />
       <p>{title}</p>
       <p>{overview}</p>
       <p>
