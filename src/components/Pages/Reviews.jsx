@@ -1,6 +1,6 @@
 import { getMovieReviews } from 'api/themoviedb';
-import MovieReviews from 'components/MovieReviews';
-import React, { Suspense, useEffect, useState } from 'react';
+import MovieReviews from 'Service/MovieReviews/MovieReviews';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
@@ -12,9 +12,9 @@ const Reviews = () => {
     );
   }, [movieId]);
   return (
-    <Suspense>
+    <>
       <MovieReviews movieReviews={movieReviews} />
-    </Suspense>
+    </>
   );
 };
 

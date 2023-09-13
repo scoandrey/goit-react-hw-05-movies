@@ -24,7 +24,6 @@ const Header = () => {
             <NavLink className="nav-link" aria-current="page" to="/movies">
               Movies
             </NavLink>
-           
           </div>
         </div>
       </div>

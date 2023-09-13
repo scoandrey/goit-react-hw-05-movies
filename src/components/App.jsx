@@ -4,7 +4,7 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('./Pages/Home'));
 const Movies = lazy(() => import('./Pages/Movies'));
-const MovieDetails = lazy(() => import('./Pages/MovieDetails'));
+const MovieDetails = lazy(() => import('./Pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('./Pages/Cast'));
 const Reviews = lazy(() => import('./Pages/Reviews'));
 
@@ -18,8 +18,8 @@ export const App = () => {
           <Route path="/movies/:movieId" element={<MovieDetails />} />
           <Route path="/movies/:movieId/credits" element={<Cast />} />
           <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-          <Route path="*" element={<h1>LINK NOT FOUND</h1>} />
         </Route>
+        <Route path="*" element={<h1>LINK NOT FOUND</h1>} />
       </Routes>
     </div>
   );

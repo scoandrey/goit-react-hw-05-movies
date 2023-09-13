@@ -33,3 +33,4 @@ export const getMoviesByName = async name => {
   const movies = await axios(url);
   return movies.data.results;
 };
+

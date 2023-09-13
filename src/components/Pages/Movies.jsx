@@ -1,5 +1,6 @@
 import { getMoviesByName } from 'api/themoviedb';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
   const [value, setValue] = useState('');
@@ -30,7 +31,17 @@ const Movies = () => {
       </nav>
       <ul>
         {list.map(item => {
-          return <li key={item.id}>{item.original_title}</li>;
+          return (
+            <li key={item.id}>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                to={`/movies/${item.id}`}
+              >
+                {item.original_title}
+              </Link>
+            </li>
+          );
         })}
       </ul>
     </>
