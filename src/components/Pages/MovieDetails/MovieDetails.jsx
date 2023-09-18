@@ -19,8 +19,14 @@ const MovieDetails = () => {
           Back
         </NavLink>
         <MovieList details={details} />
-        <p className="addInfo">{'Additional information'}</p>
-        <ul>
+        <h5>Additional information</h5>
+        <ul
+          style={{
+            padding: '20px',
+            borderTop: '2px solid gray',
+            borderBottom: '2px solid gray',
+          }}
+        >
           <li>
             <NavLink
               className="nav-link"

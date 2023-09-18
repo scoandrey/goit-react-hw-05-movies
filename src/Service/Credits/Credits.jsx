@@ -6,8 +6,8 @@ const Credits = ({ credits }) => {
     <>
       <ul className={css.creditsList}>
         {credits.map(trend => (
-          <li key={trend.id} className= {css.creditsItem}>
-            {trend.title ? trend.title : trend.name}
+          <li key={trend.id} className={css.creditsItem}>
+            <h5>{trend.title ? trend.title : trend.name}</h5>
             {
               <img
                 src={`https://image.tmdb.org/t/p/w500/${trend.profile_path}`}

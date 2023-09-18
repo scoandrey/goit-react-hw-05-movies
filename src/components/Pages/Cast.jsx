@@ -1,8 +1,7 @@
 import { getMovieCredits } from 'api/themoviedb';
 import Credits from 'Service/Credits/Credits';
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 
 const Cast = () => {
   const { movieId } = useParams();
