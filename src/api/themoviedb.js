@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://api.themoviedb.org/3';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 const apiKey = '3ea4d57f6ff7a488e31a85369041c84d';
 
 export const getTrending = async () => {
@@ -27,10 +27,8 @@ export const getMovieReviews = async id => {
   return reviews.data;
 };
 
-
 export const getMoviesByName = async name => {
-  const url = `https://api.themoviedb.org/3/search/movie?query=${name}&api_key=${apiKey}`
+  const url = `https://api.themoviedb.org/3/search/movie?query=${name}&api_key=${apiKey}`;
   const movies = await axios(url);
   return movies.data.results;
 };
-
