@@ -3,8 +3,15 @@ export const MovieList = ({ details }) => {
     return null;
   }
   const getYear = () => new Date(release_date).getFullYear();
-  const { id, poster_path, title, overview, genres, popularity, release_date } =
-    details;
+  const {
+    id,
+    poster_path,
+    title,
+    overview,
+    genres,
+    vote_average,
+    release_date,
+  } = details;
   return (
     <div key={id} style={{ display: 'flex' }}>
       <img
@@ -15,8 +22,7 @@ export const MovieList = ({ details }) => {
         <h3>
           {title}({getYear()})
         </h3>
-
-        <p>User Score: {Math.round(parseInt(popularity)/10)}%</p>
+        <p>User Score: {Math.round(vote_average * 10)}%</p>
         <h5>Owerview</h5>
         {overview}
         <h5>Genres</h5>

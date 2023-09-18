@@ -1,13 +1,16 @@
 import { getMovieDetails } from 'api/themoviedb';
 import Container from 'components/Container/Container';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { MovieList } from '../MovieList';
+import Cast from '../Cast';
+import Reviews from '../Reviews';
 import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
+  const location = useLocation();
   const [details, setDetails] = useState(null);
   useEffect(() => {
     getMovieDetails(movieId).then(setDetails);
@@ -46,6 +49,8 @@ const MovieDetails = () => {
             </NavLink>
           </li>
         </ul>
+        {location.pathname.includes('credits') && <Cast />}
+        {location.pathname.includes('reviews') && <Reviews />}
       </Container>
     </>
   );
